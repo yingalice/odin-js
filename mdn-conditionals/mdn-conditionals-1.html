@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Conditionals: Task 1</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview"></section>
+  </body>
+  
+  <script>
+    let season = prompt("What season is it?").toLowerCase();
+    let response;
+
+    // Add your code here
+    if (season.includes('summer')) {
+      response = `It's ${season} - time to go to the beach!`;
+    } else if (season.includes('winter')) {
+      response = `It's ${season} - time to go build a snowman!`;
+    } else {
+      response = 'Unrecognized season';
+    }
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+
+    let para1 = document.createElement('p');
+    para1.textContent = response;
+    section.appendChild(para1);
+  </script>
+</html>
