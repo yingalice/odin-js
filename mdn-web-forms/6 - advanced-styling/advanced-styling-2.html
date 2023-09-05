@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Advanced styling: Task 2</title>
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+
+      button,
+      input,
+      select {
+        font-family: inherit;
+        font-size: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      fieldset {
+        width: 15em;
+      }
+
+      ul {
+        padding-left: 0.75em;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        padding: 0.5em 0;
+      }  
+
+      label {
+        width: 10em;
+      }
+
+      input {
+        appearance: none;
+        width: 1.5em;
+        height: 1.5em;
+        border-radius: 50%;
+        outline: 2px solid gray;
+      }
+
+      input:checked {
+        outline: 2px solid steelblue;
+      }
+
+      input::after {
+        display: block;
+        content: " ";
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        transform: translate(4px, 4px) scale(0);
+        transition: all 0.3s ease-in;
+      }
+      
+      input:checked::after {
+        background-color: steelblue;
+        transform:  translate(4px, 4px) scale(1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <fieldset>
+        <legend>Who is your favorite pony?</legend>
+        <ul>
+          <li>
+            <label for="pinkie">Pinkie Pie</label>
+            <input type="radio" id="pinkie" name="pony" value="pinkie">
+          </li>
+          <li>
+            <label for="rainbow">Rainbow Dash</label>
+            <input type="radio" id="rainbow" name="pony" value="rainbow">
+          </li>
+          <li>
+            <label for="twilight">Twilight Sparkle</label>
+            <input type="radio" id="twilight" name="pony" value="twilight">
+          </li>
+        </ul>
+      </fieldset>
+    </form>
+  </body>
+
+</html>

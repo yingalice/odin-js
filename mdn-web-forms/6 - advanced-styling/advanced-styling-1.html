@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Advanced styling: Task 1</title>
+    <style>
+      :root {
+        --light-blue: rgb(0, 170, 255);
+      }
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      button,
+      input,
+      select {
+        font-family: inherit;
+        font-size: 100%;
+        padding: 0;
+        margin: 0;
+      }
+
+      form {
+        display: flex;
+      }
+
+      input[type="search"] {
+        appearance: none;
+        outline: none;
+        width: 250px;
+        height: 100%;
+        padding: 0.5em;
+        border: 1px solid gray;
+        border-radius: 5px;
+      }
+      
+      input[type="search"]:is(:active, :hover) {
+        outline: 1px solid dodgerblue;
+        box-shadow: 0 0 5px 0 dodgerblue;
+      }
+
+      input[type="search"]:focus {
+        border-color: dodgerblue;
+        outline-width: 1.5px;
+      }
+
+      input[type="search"] + div {
+        position: relative;
+      }
+
+      input[type="search"] + div::after {
+        position: absolute;
+        content: url(search-24px.png);
+        padding: 0.5em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <input type="search" name="search" id="search" aria-label="Search our site">
+      <div></div>
+    </form>
+  </body>
+
+</html>
